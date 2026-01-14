@@ -22,7 +22,7 @@
 //! respect this convention.
 
 use crate::TestContextObject;
-use solana_sbpf::{
+use trezoa_sbpf::{
     declare_builtin_function,
     error::EbpfError,
     memory_region::{AccessType, MemoryMapping},

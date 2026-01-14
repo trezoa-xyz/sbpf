@@ -1,13 +1,13 @@
-# solana-sbpf
+# trezoa-sbpf
 
 SBPF virtual machine
 
-[![Build Status](https://github.com/anza-xyz/sbpf/actions/workflows/main.yml/badge.svg)](https://github.com/anza-xyz/sbpf/actions/workflows/main.yml)
-[![Crates.io](https://img.shields.io/crates/v/solana-sbpf.svg)](https://crates.io/crates/solana-sbpf)
+[![Build Status](https://github.com/trezoa-xyz/sbpf/actions/workflows/main.yml/badge.svg)](https://github.com/trezoa-xyz/sbpf/actions/workflows/main.yml)
+[![Crates.io](https://img.shields.io/crates/v/trezoa-sbpf.svg)](https://crates.io/crates/trezoa-sbpf)
 
 ## Description
 
-This is a fork of [RBPF](https://github.com/solana-labs/rbpf) which in turn is a fork of [RBPF](https://github.com/qmonnet/rbpf) by Quentin Monnet.
+This is a fork of [RBPF](https://github.com/trezoa-labs/rbpf) which in turn is a fork of [RBPF](https://github.com/qmonnet/rbpf) by Quentin Monnet.
 
 This crate contains a virtual machine for eBPF program execution. BPF, as in
 _Berkeley Packet Filter_, is an assembly-like language initially developed for
@@ -24,7 +24,7 @@ although the JIT-compiler does not work with Windows at this time.
 
 ## SBPF feature description
 
-The Solana-versioned BPF, namely SBPF, has four versions, each with different 
+The Trezoa-versioned BPF, namely SBPF, has four versions, each with different 
 functionality. In the table below, we give an overview of which features are 
 available for each version.
 
@@ -39,13 +39,13 @@ available for each version.
 
 ## Link to the crate
 
-This crate is available from [crates.io](https://crates.io/crates/solana-sbpf),
+This crate is available from [crates.io](https://crates.io/crates/trezoa-sbpf),
 so it should work out of the box by adding it as a dependency in your
 `Cargo.toml` file:
 
 ```toml
 [dependencies]
-solana-sbpf = "0.14.0"
+trezoa-sbpf = "0.14.0"
 ```
 
 You can also use the development version from this GitHub repository. This
@@ -53,7 +53,7 @@ should be as simple as putting this inside your `Cargo.toml`:
 
 ```toml
 [dependencies]
-solana-sbpf = { git = "https://github.com/anza-xyz/sbpf", branch = "main" }
+trezoa-sbpf = { git = "https://github.com/trezoa-xyz/sbpf", branch = "main" }
 ```
 
 Of course, if you prefer, you can clone it locally, possibly hack the crate,
@@ -61,21 +61,21 @@ and then indicate the path of your local version in `Cargo.toml`:
 
 ```toml
 [dependencies]
-solana-sbpf = { path = "path/to/sbpf" }
+trezoa-sbpf = { path = "path/to/sbpf" }
 ```
 
 Then indicate in your source code that you want to use the crate:
 
 ```rust,ignore
-extern crate solana_sbpf;
+extern crate trezoa_sbpf;
 ```
 
 ## API
 
 The API is pretty well documented inside the source code. You should also be
 able to access [an online version of the documentation from
-here](https://docs.rs/solana-sbpf/), automatically generated from the
-[crates.io](https://crates.io/crates/solana-sbpf)
+here](https://docs.rs/trezoa-sbpf/), automatically generated from the
+[crates.io](https://crates.io/crates/trezoa-sbpf)
 version (may not be up-to-date with master branch).
 [Examples](examples), [unit tests](tests) and [performance benchmarks](benches)
 should also prove helpful.

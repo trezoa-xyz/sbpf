@@ -3,7 +3,7 @@
 use libfuzzer_sys::fuzz_target;
 
 use semantic_aware::*;
-use solana_sbpf::{
+use trezoa_sbpf::{
     ebpf,
     elf::Executable,
     insn_builder::IntoBytes,

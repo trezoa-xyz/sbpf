@@ -1,7 +1,7 @@
 #![allow(clippy::literal_string_with_formatting_args)]
 
 use byteorder::{ByteOrder, LittleEndian};
-use solana_sbpf::{
+use trezoa_sbpf::{
     ebpf,
     elf::{get_ro_region, ElfError, Executable, Section},
     elf_parser::{

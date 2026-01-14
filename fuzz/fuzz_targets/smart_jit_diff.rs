@@ -3,7 +3,7 @@
 use libfuzzer_sys::fuzz_target;
 
 use grammar_aware::*;
-use solana_sbpf::{
+use trezoa_sbpf::{
     ebpf,
     elf::Executable,
     insn_builder::{Arch, Instruction, IntoBytes},

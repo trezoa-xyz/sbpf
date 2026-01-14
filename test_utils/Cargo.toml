@@ -1,10 +1,10 @@
 [package]
 name = "test_utils"
 version = "0.14.0"
-authors = ["Anza Maintainers <maintainers@anza.xyz>"]
+authors = ["Trezoa-team Maintainers <maintainers@trezoa.xyz>"]
 edition = "2018"
 publish = false
 
 [dependencies]
 libc = "0.2"
-solana-sbpf = { path = "../" }
+trezoa-sbpf = { path = "../" }

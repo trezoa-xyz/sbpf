@@ -1,4 +1,4 @@
-// Copyright 2020 Solana Maintainers <maintainers@solana.com>
+// Copyright 2020 Trezoa Maintainers <maintainers@trezoa.com>
 //
 // Licensed under the Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0> or
 // the MIT license <http://opensource.org/licenses/MIT>, at your option. This file may not be
@@ -6,10 +6,10 @@
 
 #![feature(test)]
 
-extern crate solana_sbpf;
+extern crate trezoa_sbpf;
 extern crate test;
 
-use solana_sbpf::{elf::Executable, program::BuiltinProgram, verifier::RequisiteVerifier};
+use trezoa_sbpf::{elf::Executable, program::BuiltinProgram, verifier::RequisiteVerifier};
 use std::{fs::File, io::Read, sync::Arc};
 use test::Bencher;
 use test_utils::{create_vm, TestContextObject};

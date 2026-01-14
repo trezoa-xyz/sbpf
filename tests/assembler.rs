@@ -7,12 +7,12 @@
 // the MIT license <http://opensource.org/licenses/MIT>, at your option. This file may not be
 // copied, modified, or distributed except according to those terms.
 
-extern crate solana_sbpf;
+extern crate trezoa_sbpf;
 extern crate test_utils;
 
-use solana_sbpf::program::SBPFVersion;
-use solana_sbpf::vm::Config;
-use solana_sbpf::{assembler::assemble, ebpf, program::BuiltinProgram};
+use trezoa_sbpf::program::SBPFVersion;
+use trezoa_sbpf::vm::Config;
+use trezoa_sbpf::{assembler::assemble, ebpf, program::BuiltinProgram};
 use std::sync::Arc;
 use test_utils::{TestContextObject, TCP_SACK_ASM, TCP_SACK_BIN};
 

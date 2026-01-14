@@ -8,9 +8,9 @@
 // the MIT license <http://opensource.org/licenses/MIT>, at your option. This file may not be
 // copied, modified, or distributed except according to those terms.
 
-extern crate solana_sbpf;
-use solana_sbpf::program::SBPFVersion;
-use solana_sbpf::{
+extern crate trezoa_sbpf;
+use trezoa_sbpf::program::SBPFVersion;
+use trezoa_sbpf::{
     assembler::assemble, program::BuiltinProgram, static_analysis::Analysis, vm::Config,
 };
 use std::sync::Arc;

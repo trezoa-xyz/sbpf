@@ -311,12 +311,12 @@ name = "sbpf_cli"
 version = "0.14.0"
 dependencies = [
  "clap",
- "solana-sbpf",
+ "trezoa-sbpf",
  "test_utils",
 ]
 
 [[package]]
-name = "solana-sbpf"
+name = "trezoa-sbpf"
 version = "0.14.0"
 dependencies = [
  "byteorder",
@@ -373,7 +373,7 @@ name = "test_utils"
 version = "0.14.0"
 dependencies = [
  "libc",
- "solana-sbpf",
+ "trezoa-sbpf",
 ]
 
 [[package]]

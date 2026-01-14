@@ -8,7 +8,7 @@
 
 #![allow(dead_code)]
 
-use solana_sbpf::{
+use trezoa_sbpf::{
     aligned_memory::AlignedMemory,
     ebpf::{self, HOST_ALIGN},
     elf::Executable,
@@ -244,10 +244,10 @@ pub fn create_memory_mapping<'a, C: ContextObject>(
 #[macro_export]
 macro_rules! create_vm {
     ($vm_name:ident, $verified_executable:expr, $context_object:expr, $stack:ident, $heap:ident, $additional_regions:expr, $access_violation_handler:expr) => {
-        let mut $stack = solana_sbpf::aligned_memory::AlignedMemory::zero_filled(
+        let mut $stack = trezoa_sbpf::aligned_memory::AlignedMemory::zero_filled(
             $verified_executable.get_config().stack_size(),
         );
-        let mut $heap = solana_sbpf::aligned_memory::AlignedMemory::with_capacity(0);
+        let mut $heap = trezoa_sbpf::aligned_memory::AlignedMemory::with_capacity(0);
         let stack_len = $stack.len();
         let memory_mapping = test_utils::create_memory_mapping(
             $verified_executable,
@@ -257,14 +257,14 @@ macro_rules! create_vm {
             $access_violation_handler,
         )
         .unwrap();
-        let mut $vm_name = solana_sbpf::vm::EbpfVm::new(
+        let mut $vm_name = trezoa_sbpf::vm::EbpfVm::new(
             $verified_executable.get_loader().clone(),
             $verified_executable.get_sbpf_version(),
             $context_object,
             memory_mapping,
             stack_len,
         );
-        $vm_name.registers[1] = solana_sbpf::ebpf::MM_INPUT_START;
+        $vm_name.registers[1] = trezoa_sbpf::ebpf::MM_INPUT_START;
     };
 }
 
@@ -389,7 +389,7 @@ macro_rules! test_interpreter_and_jit {
             format!("{:?}", result), format!("{:?}", expected_result),
             "Unexpected result",
         );
-        if !matches!(expected_result, ProgramResult::Err(solana_sbpf::error::EbpfError::ExceededMaxInstructions)) {
+        if !matches!(expected_result, ProgramResult::Err(trezoa_sbpf::error::EbpfError::ExceededMaxInstructions)) {
             test_interpreter_and_jit!(
                 override_budget => true,
                 $executable,

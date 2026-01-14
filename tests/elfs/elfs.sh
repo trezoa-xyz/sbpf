@@ -1,16 +1,16 @@
 #!/bin/bash -ex
 
-# Requires Latest release of Solana's custom LLVM
-# https://github.com/anza-xyz/platform-tools/releases
+# Requires Latest release of Trezoa's custom LLVM
+# https://github.com/trezoa-xyz/platform-tools/releases
 
-TOOLCHAIN="$HOME"/.cache/solana/v1.52/platform-tools/
+TOOLCHAIN="$HOME"/.cache/trezoa/v1.52/platform-tools/
 
 CC_V0="$TOOLCHAIN/llvm/bin/clang -Werror -target sbf -O2 -fno-builtin -fPIC"
 CC_V3="$CC_V0 -mcpu=v3"
 
 RUST_COMMON="$TOOLCHAIN/rust/bin/rustc --crate-type lib -C panic=abort -C opt-level=2"
-RC_V0="$RUST_COMMON --target sbpf-solana-solana"
-RC_V3="$RUST_COMMON --target sbpfv3-solana-solana -C target_feature=+static-syscalls"
+RC_V0="$RUST_COMMON --target sbpf-trezoa-trezoa"
+RC_V3="$RUST_COMMON --target sbpfv3-trezoa-trezoa -C target_feature=+static-syscalls"
 
 OBJCOPY="$TOOLCHAIN/llvm/bin/llvm-objcopy --strip-all"
 

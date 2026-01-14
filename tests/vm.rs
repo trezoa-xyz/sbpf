@@ -1,6 +1,6 @@
 #![allow(clippy::literal_string_with_formatting_args)]
 
-use solana_sbpf::{
+use trezoa_sbpf::{
     elf::Executable,
     program::BuiltinProgram,
     vm::{Config, RuntimeEnvironmentSlot},
@@ -135,7 +135,7 @@ fn test_gdbstub_architecture() {
         });
         // If this is set leave the stub port listening hence
         // providing a simple test environment for playing with,
-        // for instance, `solana-lldb` as a client.
+        // for instance, `trezoa-lldb` as a client.
         if std::env::var("DEBUG_GDBSTUB_ARCH").is_err() {
             let client_jh = s.spawn(|| -> std::io::Result<()> {
                 let stub_addr =
@@ -156,7 +156,7 @@ fn test_gdbstub_architecture() {
                 };
 
                 // Check the remote gdbstub's architecture is indeed `sbpfv0` i.e `sbpf`.
-                // https://github.com/anza-xyz/llvm-project/blob/cefd64747bb027d9755efa4d674ee4cf5772e7c2/lldb/source/Utility/ArchSpec.cpp#L252
+                // https://github.com/trezoa-xyz/llvm-project/blob/cefd64747bb027d9755efa4d674ee4cf5772e7c2/lldb/source/Utility/ArchSpec.cpp#L252
                 writer.write_all(b"$qXfer:features:read:target.xml:0,fff#7d")?;
                 let reply = read_reply(&mut reader)?;
                 assert!(reply.contains("<architecture>sbpf</architecture>"));

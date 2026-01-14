@@ -2,7 +2,7 @@
 #![cfg(all(test, target_arch = "x86_64", not(target_os = "windows")))]
 
 use byteorder::{ByteOrder, LittleEndian};
-use solana_sbpf::{
+use trezoa_sbpf::{
     disassembler::disassemble_instruction,
     ebpf,
     elf::Executable,
