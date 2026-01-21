@@ -204,7 +204,7 @@ impl BpfCode {
         self.load_internal(mem_size, Addressing::Imm, BPF_LD)
     }
 
-    /// create ABSOLUTE LOAD instruction
+    /// create ABTRZUTE LOAD instruction
     pub fn load_abs(&mut self, mem_size: MemSize) -> Load<'_> {
         self.load_internal(mem_size, Addressing::Abs, BPF_LD)
     }
