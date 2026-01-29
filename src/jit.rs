@@ -1217,9 +1217,9 @@ impl<'a, C: ContextObject> JitCompiler<'a, C> {
                 Some(Value::Constant64(_constant, _user_provided)) => 8,
                 _ => 0,
             };
-            let anchor = ANCHOR_TRANSLATE_MEMORY_ADDRESS + anchor_base + len.trailing_zeros() as usize;
+            let trezoaanchor = ANCHOR_TRANSLATE_MEMORY_ADDRESS + anchor_base + len.trailing_zeros() as usize;
             self.emit_ins(X86Instruction::push_immediate(OperandSize::S64, self.pc as i32));
-            self.emit_ins(X86Instruction::call_immediate(self.relative_to_anchor(anchor, 5)));
+            self.emit_ins(X86Instruction::call_immediate(self.relative_to_anchor(trezoaanchor, 5)));
             if let Some(dst) = dst {
                 self.emit_ins(X86Instruction::mov(OperandSize::S64, REGISTER_SCRATCH, dst));
             }
@@ -1669,15 +1669,15 @@ impl<'a, C: ContextObject> JitCompiler<'a, C> {
         }
     }
 
-    fn set_anchor(&mut self, anchor: usize) {
-        self.anchors[anchor] = unsafe { self.result.text_section.as_ptr().add(self.offset_in_text_section) };
+    fn set_anchor(&mut self, trezoaanchor: usize) {
+        self.anchors[trezoaanchor] = unsafe { self.result.text_section.as_ptr().add(self.offset_in_text_section) };
     }
 
     // instruction_length = 5 (Unconditional jump / call)
     // instruction_length = 6 (Conditional jump)
-    fn relative_to_anchor(&self, anchor: usize, instruction_length: usize) -> i32 {
+    fn relative_to_anchor(&self, trezoaanchor: usize, instruction_length: usize) -> i32 {
         let instruction_end = unsafe { self.result.text_section.as_ptr().add(self.offset_in_text_section).add(instruction_length) };
-        let destination = self.anchors[anchor];
+        let destination = self.anchors[trezoaanchor];
         debug_assert!(!destination.is_null());
         (unsafe { destination.offset_from(instruction_end) } as i32) // Relative jump
     }
