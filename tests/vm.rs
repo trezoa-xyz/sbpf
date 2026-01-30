@@ -156,7 +156,7 @@ fn test_gdbstub_architecture() {
                 };
 
                 // Check the remote gdbstub's architecture is indeed `sbpfv0` i.e `sbpf`.
-                // https://github.com/trezoa-xyz/llvm-project/blob/cefd64747bb027d9755efa4d674ee4cf5772e7c2/lldb/source/Utility/ArchSpec.cpp#L252
+                // https://github.com/trezoa-xyz/llvm-trezoa/blob/cefd64747bb027d9755efa4d674ee4cf5772e7c2/lldb/source/Utility/ArchSpec.cpp#L252
                 writer.write_all(b"$qXfer:features:read:target.xml:0,fff#7d")?;
                 let reply = read_reply(&mut reader)?;
                 assert!(reply.contains("<architecture>sbpf</architecture>"));

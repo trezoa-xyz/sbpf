@@ -2789,7 +2789,7 @@ fn test_reloc_64_relative_data() {
 
 #[test]
 fn test_reloc_64_relative_data_sbpfv0() {
-    // Before https://github.com/trezoa-labs/llvm-project/pull/35, we used to
+    // Before https://github.com/trezoa-team/llvm-trezoa/pull/35, we used to
     // generate invalid R_BPF_64_RELATIVE relocations in sections other than
     // .text.
     //

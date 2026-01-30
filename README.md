@@ -7,7 +7,7 @@ SBPF virtual machine
 
 ## Description
 
-This is a fork of [RBPF](https://github.com/trezoa-labs/rbpf) which in turn is a fork of [RBPF](https://github.com/qmonnet/rbpf) by Quentin Monnet.
+This is a fork of [RBPF](https://github.com/trezoa-team/rbpf) which in turn is a fork of [RBPF](https://github.com/qmonnet/rbpf) by Quentin Monnet.
 
 This crate contains a virtual machine for eBPF program execution. BPF, as in
 _Berkeley Packet Filter_, is an assembly-like language initially developed for
@@ -102,7 +102,7 @@ Here are the steps to follow to run an SBPF:
 
 ## License
 
-Following the effort of the Rust language project itself in order to ease
+Following the effort of the Rust language trezoa itself in order to ease
 integration with other projects, the sbpf crate is distributed under the terms
 of both the MIT license and the Apache License (Version 2.0).
 
